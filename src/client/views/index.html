@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Test</title>
+    </head>
+
+    <body>
+
+        <header>
+            <div class="">
+                Language Checker
+            </div>
+            <div class="">
+                
+            </div>
+        </header>
+
+        <main>
+            <section>
+                <form class="" onsubmit="return Client.handleSubmit(event)">
+                    <h4>Type any word, or sentence to check its Language</h4>
+                    <input id="name" type="text" name="input" value="" placeholder="Type any word, or sentence ">
+                    <input id="key" type="text" name="input" value="7351add14297b6d945bb9e12d48d33e6" placeholder="Your key for authentication">
+                    <br>
+                    <a href="#" id='keyHref' onclick="genApiKey()">Get an API key</a>
+                    <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return handleSubmit(event)">
+                </form>
+            <section>
+
+            <section>
+                <strong>Form Results:</strong>
+                <div id="results"></div>
+            </section>
+        </main>
+
+        <footer>
+            <p>All rights reserved &copy; to meaning cloud</p>
+        </footer>
+
+        <script>
+            // Check that service workers are supported
+            if ('serviceWorker' in navigator) {
+                // Use the window load event to keep the page load performant
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/service-worker.js');
+                });
+            }
+
+            function genApiKey() {
+                document.getElementById('key').value = '7351add14297b6d945bb9e12d48d33e6'
+            }
+        </script>
+    </body>
+</html>

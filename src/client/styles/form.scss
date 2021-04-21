@@ -1,0 +1,27 @@
+$primary-color: #0173d5;
+$font-color: #29353b;
+
+form {
+    border: 1px solid #545454;
+    border-radius: 3px;
+    padding: 40px;
+}
+
+input {
+    padding: 5px 5px;
+    width: 100%;
+    line-height: 16px;
+    margin: 10px 0;
+
+}
+main {
+    font-size: 1.2em;
+    color: $font-color;
+    #results {
+        font-size: 2em;
+    }
+}
+#keyHref {
+    color: $primary-color;
+    text-decoration: none;
+}
