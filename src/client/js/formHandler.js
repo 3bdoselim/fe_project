@@ -15,10 +15,12 @@ async function handleSubmit(event) {
             .then(res => res.json())
             .then(function (res) {
                 console.log(res)
-                res.language_list.map(lang => {
-                    document.getElementById('results').innerHTML += '<li>'+lang.name+'</li>'
-                })
-                // document.getElementById('results').innerHTML = JSON.stringify()
+                document.getElementById('results').innerHTML += '<br><li>Subjectivity: '+res.subjectivity+'</li>'
+                document.getElementById('results').innerHTML += '<br><li>Agreement: '+res.agreement+'</li>'
+                document.getElementById('results').innerHTML += '<br><li>Confidence: '+res.confidence+'</li>'
+                document.getElementById('results').innerHTML += '<br><li>Irony: '+res.irony+'</li>'
+                document.getElementById('results').innerHTML += '<br><li>Score Tag: '+res.score_tag+'</li>'
+
             })
     } else {
         document.getElementById('results').innerHTML = '<b style="color:red">This Field is required</b>'

@@ -36,12 +36,13 @@ app.post('/checklang', function (req, res) {
     const sentData = {
         key: process.env['API_KEY'],
         txt: req.body.txt,
+        lang: 'en'
     }
     console.log(req.body.inputText)
     console.log(req, res)
     console.log(sentData)
     const queryParams = new URLSearchParams(sentData).toString()
-    const url = 'https://api.meaningcloud.com/lang-2.0?'+queryParams
+    const url = 'https://api.meaningcloud.com/sentiment-2.1?'+queryParams
     fetch(url)
         .then(result => result.json() )
         .then(result => res.send(result) )
