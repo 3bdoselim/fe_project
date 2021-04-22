@@ -1,7 +1,6 @@
-# Get Language of word, or sentence App
+# Sentiment Analysis App
 
-This App is running with node js and it calls and used API form meaningcloud.com
-all you need an API Key and a word, or a sentence
+Sentiment Analysis analyzes texts and detects their polarity, subjectivity, irony and emotional agreement.
 
 
 ## Getting Up and Running
