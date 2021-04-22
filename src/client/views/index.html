@@ -21,9 +21,7 @@
                 <form class="" onsubmit="return Client.handleSubmit(event)">
                     <h4>Type any word, or sentence to check its Language</h4>
                     <input id="name" type="text" name="input" value="" placeholder="Type any word, or sentence ">
-                    <input id="key" type="text" name="input" value="7351add14297b6d945bb9e12d48d33e6" placeholder="Your key for authentication">
                     <br>
-                    <a href="#" id='keyHref' onclick="genApiKey()">Get an API key</a>
                     <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return handleSubmit(event)">
                 </form>
             <section>
@@ -45,10 +43,6 @@
                 window.addEventListener('load', () => {
                     navigator.serviceWorker.register('/service-worker.js');
                 });
-            }
-
-            function genApiKey() {
-                document.getElementById('key').value = '7351add14297b6d945bb9e12d48d33e6'
             }
         </script>
     </body>

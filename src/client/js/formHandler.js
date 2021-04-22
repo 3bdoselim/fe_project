@@ -1,21 +1,28 @@
 async function handleSubmit(event) {
     event.preventDefault()
-
+    document.getElementById('results').innerHTML = ''
     // check what text was put into the form field
     let inputText = document.getElementById('name').value
-    let apiKey = document.getElementById('key').value
-    let response = null
-    if(inputText && apiKey){
-        response = await Client.checkForLang(inputText, apiKey)
-    }else if (!apiKey){
-        document.getElementById('results').innerHTML = '<b style="color:red">You aren\'t authenticated</b>'
-    }else{
-        document.getElementById('results').innerHTML = '<b style="color:red">Please provide a sentinse</b>'
+    console.log(inputText)
+    if (inputText){
+        fetch('http://localhost:8081/checklang', {
+            method: 'POST',
+            body: JSON.stringify({ txt: inputText }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+            .then(res => res.json())
+            .then(function (res) {
+                console.log(res)
+                res.language_list.map(lang => {
+                    document.getElementById('results').innerHTML += '<li>'+lang.name+'</li>'
+                })
+                // document.getElementById('results').innerHTML = JSON.stringify()
+            })
+    } else {
+        document.getElementById('results').innerHTML = '<b style="color:red">This Field is required</b>'
     }
 
-    if (response){
-        document.getElementById('results').innerText = response.body.language_list[0].name
-        document.getElementById('name').value = ''
-    }
 }
 export { handleSubmit }
